@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A propos de nous</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<nav class="navbar navbar-expand-lg custom-header">
+  <div class="container">
+    <button class="navbar-toggler mx-auto" type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item mx-2"><a class="nav-link" href="index.html">Gallery</a></li>
+        <li class="nav-item mx-2"><a class="nav-link" href="produits.html">Products</a></li>
+        <li class="nav-item mx-2"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item mx-2"><a class="nav-link active" href="aproposdenous.html">About Us</a></li>
+        <li class="nav-item mx-2"><a class="nav-link" href="contacteznous.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ABOUT SECTION -->
+<section class="container py-5" id="about-section">
+  <h2 class="section-title text-center">Concept</h2>
+
+  <div class="row mt-5">
+
+    <!-- COLONNE GAUCHE (CONTENU DYNAMIQUE) -->
+    <div class="col-lg-8">
+      <div class="service-box p-4" id="dynamic-content">
+        <div class="row align-items-center">
+          <div class="col-md-4 mb-3 mb-md-0">
+            <img id="about-image" src="images/img14.jpeg" class="img-fluid rounded" alt="About image">
+          </div>
+          <div class="col-md-8">
+            <h3 class="fw-bold mb-3" id="about-title">Our History</h3>
+            <p id="about-text">
+              Vivamus eleifend vestibulum auctor. Nam ac leo sed nulla iaculis commodo sit amet a ligula. Proin consequat magna nec sodales hendrerit. Nam commodo mi dolor, quis egestas lectus viverra eu. Cras accumsan ultrices turpis et lacinia. Sed non lobortis purus. Phasellus consequat, magna id rutrum lacinia, magna urna malesuada magna, ut fringilla odio sapien at nunc. Proin nisl purus, semper at fermentum sit amet, vehicula eget dolor. Integer sodales vehicula magna mattis semper. Etiam pellentesque semper mi vitae tempus. Praesent ut metus sed lacus egestas blandit eget gravida enim. Ut rutrum suscipit velit sit amet tempor. Donec rutrum, lacus non blandit rhoncus, nisi orci tempus risus, non vehicula enim lacus et est. In non gravida metus. Duis augue mauris, ullamcorper quis blandit sit amet, laoreet sed dui.
+              <br><br>
+              Cras quis nibh vitae ligula venenatis blandit ut eleifend nunc.
+              Morbi imperdiet mauris ut dolor pellentesque egestas.
+              Ut ultrices lorem quis tellus malesuada blandit.
+              Donec pharetra ante in sodales semper.
+              Nam vitae bibendum velit, eu fermentum dui.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLONNE DROITE -->
+    <div class="col-lg-4">
+      <div class="side-box red-box text-center text-white mb-4 p-5 clickable active" onclick="showSection('history')">
+        <i class="bi bi-clock-history icon-box"></i>
+        <h4 class="mt-3 fw-bold">Our History</h4>
+      </div>
+
+      <div class="side-box gray-box text-center text-white mb-4 p-5 clickable" onclick="showSection('team')">
+        <i class="bi bi-people-fill icon-box"></i>
+        <h4 class="mt-3 fw-bold">Our Team</h4>
+      </div>
+
+      <div class="side-box dark-box text-center text-white p-5 clickable" onclick="showSection('workspace')">
+        <i class="bi bi-building icon-box"></i>
+        <h4 class="mt-3 fw-bold">Our Workspace</h4>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  Copyright © 2084 Your Company Name
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- SCRIPT DYNAMIQUE -->
+<script>
+function showSection(section) {
+  const img = document.getElementById('about-image');
+  const title = document.getElementById('about-title');
+  const text = document.getElementById('about-text');
+
+  const boxes = document.querySelectorAll('.side-box');
+  boxes.forEach(box => box.classList.remove('active'));
+
+  let activeBox;
+
+  if(section === 'history') {
+    img.src = 'images/img14.jpeg';
+    title.textContent = 'Our History';
+    text.innerHTML = `
+      Vivamus eleifend vestibulum auctor. Nam ac leo sed nulla iaculis commodo sit amet a ligula. Proin consequat magna nec sodales hendrerit. Nam commodo mi dolor, quis egestas lectus viverra eu. Cras accumsan ultrices turpis et lacinia. Sed non lobortis purus. Phasellus consequat, magna id rutrum lacinia, magna urna malesuada magna, ut fringilla odio sapien at nunc. Proin nisl purus, semper at fermentum sit amet, vehicula eget dolor. Integer sodales vehicula magna mattis semper. Etiam pellentesque semper mi vitae tempus. Praesent ut metus sed lacus egestas blandit eget gravida enim. Ut rutrum suscipit velit sit amet tempor. Donec rutrum, lacus non blandit rhoncus, nisi orci tempus risus, non vehicula enim lacus et est. In non gravida metus. Duis augue mauris, ullamcorper quis blandit sit amet, laoreet sed dui.
+      <br><br>
+      Cras quis nibh vitae ligula venenatis blandit ut eleifend nunc.
+      Morbi imperdiet mauris ut dolor pellentesque egestas.
+      Ut ultrices lorem quis tellus malesuada blandit.
+      Donec pharetra ante in sodales semper.
+      Nam vitae bibendum velit, eu fermentum dui.
+    `;
+    activeBox = document.querySelector('.red-box');
+
+  } else if(section === 'team') {
+    img.src = 'images/img11.jpeg';
+    title.textContent = 'Our Team';
+    text.innerHTML = `
+      Duis purus mauris, tincidunt at consectetur non, tristique sodales ligula. Cras congue cursus risus, nec tempus mi porta eget. Cras ante metus, aliquam tincidunt eros sed, dignissim hendrerit est. Phasellus fringilla sit amet dui eu convallis. Mauris tristique, metus eget auctor tempor, elit odio vehicula mi, ac placerat lectus augue eu arcu. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris eu porta urna, a commodo leo. Phasellus porttitor, nisl vitae molestie euismod, magna lorem porta ante, eu commodo nisl orci ut nisi. Curabitur imperdiet, arcu vitae tincidunt viverra, velit elit aliquam metus, sed ultrices metus odio sed nunc.
+      <br><br>
+      Etiam lectus tortor, lobortis eu mattis nec, eleifend a nunc. Quisque consequat lectus sed imperdiet vulputate. Vivamus tristique non elit eu faucibus. Nam et arcu vestibulum, bibendum risus vitae, gravida libero. Suspendisse sed lacus neque. Nullam arcu elit, luctus ut enim et, eleifend varius dui. Fusce sit amet convallis lacus. Quisque vel ultricies libero. Morbi at tempor nisi.
+    `;
+    activeBox = document.querySelector('.gray-box');
+
+  } else if(section === 'workspace') {
+    img.src = 'images/img15.jpeg';
+    title.textContent = 'Our Workspace';
+    text.innerHTML = `
+      Labore, libero itaque quisquam officiis earum. Eaque, facilis, quibusdam, ab, voluptates quaerat dignissimos totam nam consequuntur labore explicabo temporibus atque aliquid asperiores error impedit repudiandae est nemo omnis sequi quae eius quos repellat doloribus cumque nulla sunt maxime ducimus commodi animi placeat quo debitis earum illum numquam inventore aspernatur necessitatibus voluptatum delectus maiores laboriosam magni ex illo quod corporis hic consectetur odio suscipit fugit qui aperiam. Sequi, quos, nam quam debitis architecto doloribus rerum illum magnam culpa ex eius nobis ducimus aspernatur aliquid laborum deleniti distinctio temporibus quae.
+      <br><br>
+      Quisque consequat lectus sed imperdiet vulputate. Vivamus tristique non elit eu faucibus. Nam et arcu vestibulum, bibendum risus vitae, gravida libero. Suspendisse sed lacus neque. Nullam arcu elit, luctus ut enim et, eleifend varius dui.
+    `;
+    activeBox = document.querySelector('.dark-box');
+  }
+
+  if(activeBox) activeBox.classList.add('active');
+}
+</script>
+
+</body>
+</html>
